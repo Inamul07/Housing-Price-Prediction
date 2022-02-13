@@ -30,11 +30,11 @@ def load_saved_artifacts():
     global __locations
     global __model
 
-    with open("/Users/mohamedinamulhassan/Desktop/Housing Price Prediction/server/artifacts/columns.json", 'r') as f:
+    with open("/Users/mohamedinamulhassan/Desktop/Housing-Price-Prediction/server/artifacts/columns.json", 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    with open("/Users/mohamedinamulhassan/Desktop/Housing Price Prediction/server/artifacts/chennai_housing.pickle", 'rb') as f:
+    with open("/Users/mohamedinamulhassan/Desktop/Housing-Price-Prediction/server/artifacts/chennai_housing.pickle", 'rb') as f:
         __model = pickle.load(f)
     print("Loading Artifacts Done")
 
