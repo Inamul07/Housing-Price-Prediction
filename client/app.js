@@ -27,7 +27,8 @@ function onClickedEstimatePrice() {
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
 
-    var url = "http://127.0.0.1:5000/predict_home_price";
+    // var url = "http://127.0.0.1:5000/predict_home_price";
+    var url = "/api/predict_home_price"; // For nginx
 
     $.post(url, {
         Area: parseFloat(sqft.value),
@@ -47,7 +48,8 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
     console.log("Document Loaded");
-    var url = "http://127.0.0.1:5000/get_location_names";
+    // var url = "http://127.0.0.1:5000/get_location_names";
+    var url = "/api/get_location_names"; // For nginx
     $.get(url, function(data, status) {
         console.log("got response for get_location_names request");
         if(data) {
