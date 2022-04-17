@@ -5,7 +5,6 @@ import numpy as np
 __locations = None
 __data_columns = None
 __model = None
-path = "/opt/build/repo/server/"
 
 def get_estimated_price(Location, sqft, resale, bhk):
     try:
@@ -31,11 +30,11 @@ def load_saved_artifacts():
     global __locations
     global __model
 
-    with open(path + "artifacts/columns.json", 'r') as f:
+    with open("./artifacts/columns.json", 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    with open(path + "artifacts/chennai_housing.pickle", 'rb') as f:
+    with open("./artifacts/chennai_housing.pickle", 'rb') as f:
         __model = pickle.load(f)
     print("Loading Artifacts Done")
 
